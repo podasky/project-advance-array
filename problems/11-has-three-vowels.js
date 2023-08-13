@@ -18,13 +18,15 @@ console.log(hasThreeVowels('go home'));         //  false
 
 let hasThreeVowels = function(string) {
     // Your code here
-    let vowels = "AEIOUaeiou";
-    let vowelcount = [...string].reduce((sum, char) => {
-        if (vowels.includes(char)){return sum++}{
-            return sum
-        }
+    let vowels = "aeiouAEIOU";
+    let vowelcount = [...string].reduce((count, char) => {
+        if (vowels.includes(char)){
+            //console.log("counted" + " " + char)
+            return count + 1
+            }
+            return count
     }, 0);
-    return vowelcount >= 3;
+    return vowelcount > 3;
 };
 
 console.log(hasThreeVowels('delicious'));       //  true
